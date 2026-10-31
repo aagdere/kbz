@@ -1,0 +1,14 @@
+[
+  {
+    "path": "pool/main/k/kbz/kbz_0.1.2803_amd64.deb",
+    "url": "https://github.com/aagdere/kbz/releases/download/v0.1.2803/kbz_0.1.2803_amd64.deb",
+    "sha256": "e726229c282464d0e080e149e996d2145145dc54226220a62b5fc63c4366a5d1",
+    "size": 114054200
+  },
+  {
+    "path": "pool/main/k/kbz/kbz_0.1.2803_arm64.deb",
+    "url": "https://github.com/aagdere/kbz/releases/download/v0.1.2803/kbz_0.1.2803_arm64.deb",
+    "sha256": "915c73c2b0901fb5eb104ad0b1099c47736a59e630893e2f42a7e9175165db40",
+    "size": 110993208
+  }
+]

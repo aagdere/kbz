@@ -1,0 +1,22 @@
+Origin: Kibitz
+Label: Kibitz
+Suite: stable
+Codename: stable
+Date: Sat, 31 Oct 2026 18:32:18 GMT
+Architectures: amd64 arm64
+Components: main
+MD5Sum:
+ 564734cdd87eb30ede4bafdd6cf0a28c        831 main/binary-amd64/Packages
+ a4c8db89af0f4216547e2d47e94194a0        565 main/binary-amd64/Packages.gz
+ 9681fc46d4fffcc2197dd6dc4451c5e3        831 main/binary-arm64/Packages
+ c8e42fb4b1e06c7969d0ad6a86252331        565 main/binary-arm64/Packages.gz
+SHA1:
+ 7e2c04c6efae2059dc08a41edf010dc9520697dc        831 main/binary-amd64/Packages
+ 8dac14ae5589a7cbd1f16030fd818bd2c084accb        565 main/binary-amd64/Packages.gz
+ 0977dc21bcdbd7c936f22754c18cd101532cf9c3        831 main/binary-arm64/Packages
+ 159d4100fbc99ebfcac6b46f5d5c3fd9a18248b0        565 main/binary-arm64/Packages.gz
+SHA256:
+ 5b0dd3e9b65e70b0f02cfce64ea86ae7e08dc03d84ac8383599735f24c97847f        831 main/binary-amd64/Packages
+ 17a2f71e4f1e94ccc1779e2be2ab2e8b756fad7d5f61139fe8b220a6ebce7a1d        565 main/binary-amd64/Packages.gz
+ 521d2171dd1394e8a789127d2fc8a4336e4ede246338c52d79a83cc6d8549058        831 main/binary-arm64/Packages
+ 285618194d27786107224b2f9428efac334f45dc3099cb63f0a7a694d2b12ec2        565 main/binary-arm64/Packages.gz
