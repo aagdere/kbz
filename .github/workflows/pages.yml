@@ -1,0 +1,59 @@
+name: Publish the Kibitz apt repository
+
+# Kept in the Kibitz source repository (packaging/public-repo/pages.yml) and
+# copied here by its packages workflow on every release (#1586): edit it there.
+#
+# Deploys the GitHub Pages site that serves the signed apt repository. The
+# `apt` branch holds its metadata (dists/, the public key, install.sh) and
+# pool.json, which lists every pool/ file with the release it downloads from
+# and its SHA-256. The .debs (about 110 MB) are over git's 100 MB file limit,
+# so they are fetched from this repository's releases, checked, and deployed
+# with the site; a Pages deployment has no per-file limit.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: apt
+          path: apt
+          persist-credentials: false
+
+      - name: Assemble the site
+        shell: bash
+        run: |
+          set -euo pipefail
+          site="$RUNNER_TEMP/site"
+          rm -rf "$site"; mkdir -p "$site"
+          cp -R apt/dists "$site/"
+          cp apt/kibitz-archive-keyring.gpg apt/install.sh apt/index.html "$site/"
+          jq -r '.[] | [.path, .url, .sha256] | @tsv' apt/pool.json | while IFS=$'\t' read -r path url sha; do
+            mkdir -p "$site/$(dirname "$path")"
+            curl -fsSL --retry 3 "$url" -o "$site/$path"
+            echo "$sha  $site/$path" | sha256sum -c --quiet
+            echo "pool: $path"
+          done
+          du -sh "$site"
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ${{ runner.temp }}/site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4
