@@ -3,8 +3,9 @@ name: Publish the Kibitz apt repository
 # Kept in the Kibitz source repository (packaging/public-repo/pages.yml) and
 # copied here by its packages workflow on every release (#1586): edit it there.
 #
-# Deploys the GitHub Pages site that serves the signed apt repository. The
-# `apt` branch holds its metadata (dists/, the public key, install.sh) and
+# Deploys the GitHub Pages site that serves the install script and the signed
+# apt repository. The `apt` branch holds its metadata (dists/, the public key,
+# install.sh), the install script (install) and
 # pool.json, which lists every pool/ file with the release it downloads from
 # and its SHA-256. The .debs (about 110 MB) are over git's 100 MB file limit,
 # so they are fetched from this repository's releases, checked, and deployed
@@ -43,6 +44,8 @@ jobs:
           rm -rf "$site"; mkdir -p "$site"
           cp -R apt/dists "$site/"
           cp apt/kibitz-archive-keyring.gpg apt/install.sh apt/index.html "$site/"
+          # the one install line's script (#1740): curl -fsSL <site>/install | sh
+          if [ -f apt/install ]; then cp apt/install "$site/"; fi
           jq -r '.[] | [.path, .url, .sha256] | @tsv' apt/pool.json | while IFS=$'\t' read -r path url sha; do
             mkdir -p "$site/$(dirname "$path")"
             curl -fsSL --retry 3 "$url" -o "$site/$path"
