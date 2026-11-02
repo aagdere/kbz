@@ -1,10 +1,12 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Kibitz apt repository</title></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kibitz</title></head>
 <body>
-<h1>Kibitz apt repository</h1>
-<p>Kibitz for Debian, Ubuntu and Raspberry Pi OS (amd64 and arm64). Add this repository and its signing key once, then install:</p>
-<pre>curl -fsSL https://aagdere.github.io/kbz/install.sh | sudo sh
-sudo apt install kbz
-sudo kbz setup</pre>
-<p>The key is <a href="kibitz-archive-keyring.gpg">kibitz-archive-keyring.gpg</a>; the index is under <a href="dists/stable/">dists/stable</a>.</p>
+<h1>Kibitz</h1>
+<p>Run coding agents on your repositories from your Mac and iPhone.</p>
+<h2>Install</h2>
+<p>On a Mac, or on Debian, Ubuntu and Raspberry Pi OS:</p>
+<pre>curl -fsSL https://aagdere.github.io/kbz/install | sh</pre>
+<p>On a Mac it installs the Kibitz app, which sets up the rest when it first opens. On Linux it installs the <code>kbz</code> package; then choose what the machine does with <code>sudo kbz setup</code>.</p>
+<p>The apt repository's key is <a href="kibitz-archive-keyring.gpg">kibitz-archive-keyring.gpg</a>; its index is under <a href="dists/stable/">dists/stable</a>.</p>
 </body></html>

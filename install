@@ -1,0 +1,93 @@
+#!/bin/sh
+# Installs Kibitz (#1740):
+#   curl -fsSL https://aagdere.github.io/kbz/install | sh
+# macOS: the Kibitz app; it sets up the rest when it first opens.
+#   curl -fsSL https://aagdere.github.io/kbz/install | sh -s -- --cli    the kbz command and service instead (Homebrew)
+# Debian, Ubuntu, Raspberry Pi OS: the kbz package, from the Kibitz apt repository.
+set -eu
+
+say() { printf '%s\n' "$*"; }
+fail() { printf 'Kibitz install: %s\n' "$*" >&2; exit 1; }
+
+install_mac_app() {
+  [ "$(uname -m)" = arm64 ] || fail 'the Kibitz app needs a Mac with Apple silicon. For the kbz command alone: curl -fsSL https://aagdere.github.io/kbz/install | sh -s -- --cli'
+  dest="${KIBITZ_APP_DIR:-/Applications}"
+  for dir in "$dest" "$HOME/Applications"; do
+    if [ -d "$dir/Kibitz.app" ]; then
+      say "Kibitz is already in $dir, and updates itself. Opening it."
+      open "$dir/Kibitz.app"
+      return
+    fi
+  done
+  [ -w "$dest" ] || dest="$HOME/Applications"
+  tmp="$(mktemp -d)"
+  trap 'rm -rf "$tmp"' EXIT
+  say "Downloading Kibitz..."
+  curl -fL --progress-bar 'https://github.com/aagdere/kbz/releases/download/v0.1.3171/Kibitz-0.1.3171-arm64-mac.zip' -o "$tmp/Kibitz.zip"
+  [ "$(shasum -a 256 "$tmp/Kibitz.zip" | cut -d' ' -f1)" = '1afc663622f256f15b24a33fca08eb648b4fca49edeab75709a3d06a457d30f4' ] || fail "the download does not match its checksum; try again"
+  ditto -x -k "$tmp/Kibitz.zip" "$tmp/app"
+  codesign --verify --deep --strict "$tmp/app/Kibitz.app" || fail "the downloaded app's signature does not verify"
+  mkdir -p "$dest"
+  ditto "$tmp/app/Kibitz.app" "$dest/Kibitz.app"
+  say "Installed Kibitz in $dest. Opening it: it sets up the rest."
+  open "$dest/Kibitz.app"
+}
+
+install_mac_cli() {
+  command -v brew >/dev/null 2>&1 || fail "--cli installs through Homebrew: install it from https://brew.sh first, or leave out --cli for the Kibitz app"
+  brew install 'aagdere/kbz/kbz'
+  say "Next, choose what this Mac does, then start it: kbz setup, then brew services start kbz"
+}
+
+install_linux() {
+  command -v apt-get >/dev/null 2>&1 || fail "Kibitz installs on Debian, Ubuntu and Raspberry Pi OS (apt-get not found)"
+  arch="$(dpkg --print-architecture)"
+  case "$arch" in amd64|arm64) ;; *) fail "Kibitz is built for amd64 and arm64, not $arch" ;; esac
+  if [ "$(id -u)" -eq 0 ]; then
+    sudo=
+  else
+    command -v sudo >/dev/null 2>&1 || fail "run this as root"
+    sudo=sudo
+  fi
+  tmp="$(mktemp -d)"
+  trap 'rm -rf "$tmp"' EXIT
+  cat > "$tmp/apt-setup.sh" <<'KIBITZ_APT'
+set -eu
+apt-get update -qq
+apt-get install -y -qq ca-certificates curl >/dev/null
+install -d -m 0755 /usr/share/keyrings
+curl -fsSL https://aagdere.github.io/kbz/kibitz-archive-keyring.gpg -o /usr/share/keyrings/kibitz-archive-keyring.gpg
+chmod 0644 /usr/share/keyrings/kibitz-archive-keyring.gpg
+cat > /etc/apt/sources.list.d/kibitz.sources <<EOF
+Types: deb
+URIs: https://aagdere.github.io/kbz
+Suites: stable
+Components: main
+Signed-By: /usr/share/keyrings/kibitz-archive-keyring.gpg
+EOF
+apt-get update -qq
+KIBITZ_APT
+  say "Adding the Kibitz apt repository (https://aagdere.github.io/kbz)..."
+  $sudo sh "$tmp/apt-setup.sh"
+  $sudo apt-get install -y kbz
+  say "Installed Kibitz. Next, choose what this machine does: sudo kbz setup"
+}
+
+main() {
+  cli=
+  for arg in "$@"; do
+    case "$arg" in
+      --cli) cli=1 ;;
+      -h|--help) say 'Usage: curl -fsSL https://aagdere.github.io/kbz/install | sh [-s -- --cli]'; return 0 ;;
+      *) fail "unknown option $arg" ;;
+    esac
+  done
+  case "$(uname -s)" in
+    Darwin) if [ -n "$cli" ]; then install_mac_cli; else install_mac_app; fi ;;
+    Linux) install_linux ;;
+    *) fail "Kibitz installs on macOS and on Debian, Ubuntu and Raspberry Pi OS, not $(uname -s)" ;;
+  esac
+}
+
+# all of it is read before anything runs, so a download cut short does nothing
+main "$@"
