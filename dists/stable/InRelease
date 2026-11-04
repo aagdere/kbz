@@ -5,37 +5,37 @@ Origin: Kibitz
 Label: Kibitz
 Suite: stable
 Codename: stable
-Date: Wed, 04 Nov 2026 05:04:13 GMT
+Date: Wed, 04 Nov 2026 05:30:03 GMT
 Architectures: amd64 arm64
 Components: main
 MD5Sum:
- aec75f39f0e6a0299a5cf9ea99520d09       1661 main/binary-amd64/Packages
- ace47b8bbfa40cbd02f6ce7ef95f28c3        698 main/binary-amd64/Packages.gz
- 1db52273782aa9369b1525b701220948       1661 main/binary-arm64/Packages
- 724f000de907da1d45a85063368fc7b5        698 main/binary-arm64/Packages.gz
+ fe175a06936ea303fdecfde7d9947e70       1661 main/binary-amd64/Packages
+ 4b63cf83f075d2abf7ffb4298c5e5e4e        692 main/binary-amd64/Packages.gz
+ a6495378187ff8701625f3d0f1516fec       1661 main/binary-arm64/Packages
+ bfb6959950ab29d4bd75d6a9f47c0921        691 main/binary-arm64/Packages.gz
 SHA1:
- 7aba970fedf12d51a99e20a0ca568a4d7162e5b1       1661 main/binary-amd64/Packages
- 08c8c9951cafd558c86ab43f7ee0f558052dbca3        698 main/binary-amd64/Packages.gz
- 66f11a87288363874a8eb0bc6396ab466eae2c92       1661 main/binary-arm64/Packages
- 6e1102b6c28106e7ce8b8ea5aac65f077923f980        698 main/binary-arm64/Packages.gz
+ e1a711151299843cb051ce0890395fc63e99d7dc       1661 main/binary-amd64/Packages
+ 3d0e5e278ed374685bdb8ecf148630444bfb79fd        692 main/binary-amd64/Packages.gz
+ f34bf84f79a881842b7cf4c0b515e75fdfeae335       1661 main/binary-arm64/Packages
+ 3517eeddca86cb8a54c2305a4e96be82ca0f4b4c        691 main/binary-arm64/Packages.gz
 SHA256:
- ac33d4c8409e1278156f95f91bbeb417e32f2eb815ea3d430dbc314e2dcdd871       1661 main/binary-amd64/Packages
- 8fe0f105fd39f6ae220446370b425623ed7af9184ed2fa203f5bceb4d7d6ae57        698 main/binary-amd64/Packages.gz
- 970df26616366f8c7cd601fbaef2d6d5a8307e3de6eac6a239634ce50f5d39af       1661 main/binary-arm64/Packages
- 80b99645a85ff186e512e46e5aaeff3dec22153abae579bcc671aefe83e3c716        698 main/binary-arm64/Packages.gz
+ 632159dad30c881551be679233a5cedec80e8596c0018ec2a9e95c4f0b91cf63       1661 main/binary-amd64/Packages
+ e05e5aee6f03a1c11f623cbe39b1c9fa0c54a041b3f48fd19d83b3a656e34bb1        692 main/binary-amd64/Packages.gz
+ 51ce1e467e55963f3c59d7645671bd90c114398947e9ef4f02443716e328a4fc       1661 main/binary-arm64/Packages
+ 78c989e65dd541fe058aee2b0e57dccece4465adc3fa72b20f3c671fecdd0619        691 main/binary-arm64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE06wXG62f2xeMaUjRpieRfcE8wNYFAmrqvM0ACgkQpieRfcE8
-wNYc+RAArCZUaVwE/T0W5aRSTMMILRdvnqULBzobqmukiZ+k3Yn+ZPABDQvWseKd
-0Q1q4jS1y3+PsuD37VTcEAkH2Gb91TYZflPU128t+F+j5loj4COneZZEqBPS5iWS
-P2AEd0seI0n2ypLp6H7oMuuJ4ku4saGbydrTt8lbNkSrhCDUOq8wIkHHEBgPhvbJ
-WphZ6gVj2pMqK3QFvlSSaFCWpUKkTtN/0N35uDd42yzAlcW05aPNvHDeSvL2i7a/
-JYaReowKPPAGAWkljaal7bnq6BX5kkPH+0jx1oXvON9qQ1KHAg4cth5suOMTSYXZ
-KWAdPKj8oKhevieOzzGu9mhn4nsKH/D7fBQGXTTS2AxmUsmVOB3/mzqIIvSo8CKO
-1iGrp0SbATZ/EOGqGC/cHNMdZt5yH3PyGnnj9vUKgGligQ1bgAC2B2oNAHE9RbTq
-e5E+0+KfhuP+PR4YznNZL0wqtXqh70LN2Z462kv8JkUuXyDqU/FVW/Wt3RWGubq3
-hjdjOi6VerHckr955J8h/tHOk16XkWISVtKpQbyyduQSOnQ2O5Frmw/d9nk/Ha9w
-xusNSLj7S0QE+HnIu4WlNOs4IFw3/ygPN4KsUdmsLfMetag4mov4HD5Iz1AYPFoP
-hmgPQa53iC0xOlrJKJOBNGGXqVf7tR4u7zCwgxiUaVwmiwHXPH0=
-=0WQn
+iQIzBAEBCgAdFiEE06wXG62f2xeMaUjRpieRfcE8wNYFAmrqwtsACgkQpieRfcE8
+wNaczxAAt6Ha2TH+HLXYDmWdyrVWKV787AnUa1FX49d+sKvfXlLetdOusGQuDrLL
+xndjGWeoMjYHv47eEpAgIyVUvjrwBZPuDjADz42xksLCtQVl/m+ogFTP65S9SgPF
+vlV4s1e7Ypya58staPNEQC/gwgOkn1FZl7Hugf1E/KZhoC1KFH8RXbbTqeh2apsk
+bB7iLCN/HuNVFqYsFtYcnbzSIzBnEFfLCm0NFf71dK1dycEjDIiRha1xuyaCgvrV
+pXRfwBmZqA90ze/Irp9vCEPAdDGLVZHzFr7rLm3Wq+lDQEDeOuRpW39O8879LIOe
++g/p+sXllJ6UqjmqThy5SJvax6lQaNImPJVbm/ME+cq9oCaiaCyU7bjIk02vPsbz
+Y6MSt5rUu+TcirNc4+dINnRQdnEVnZg/yO+kURwq1GP/LXFuGshqiqXgCfpQZlIJ
+p9qsrnI8fzlCz0UIUamTG9F6XYTw04RlxRTA/jEbzrKCaUQAzjFpAuHd+dy/Mi20
+oAZ5yjJDB2ovlt8mLGnRGRlxW8jACQ6iOserIeOCKr03ME2m4MFz/zEpc790UWFk
+EIQG5Rka4lcoh8wJ9TiyFsrzFNDQ+ALmXqZxVbFGaP02M1BkIZ5PbI8iJqXBaYqW
+wVTTFCsmZfcepX0MQbxiNiJL0kRhCwGkjogik0QoQXERXXgsjKw=
+=ZOXs
 -----END PGP SIGNATURE-----
