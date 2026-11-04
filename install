@@ -23,8 +23,8 @@ install_mac_app() {
   tmp="$(mktemp -d)"
   trap 'rm -rf "$tmp"' EXIT
   say "Downloading Kibitz..."
-  curl -fL --progress-bar 'https://github.com/aagdere/kbz/releases/download/v0.1.3497/Kibitz-0.1.3497-arm64-mac.zip' -o "$tmp/Kibitz.zip"
-  [ "$(shasum -a 256 "$tmp/Kibitz.zip" | cut -d' ' -f1)" = 'f6ffa49bfdfe3772b3ced6018401cf9522b63c49a5feea355eac778f68c86fad' ] || fail "the download does not match its checksum; try again"
+  curl -fL --progress-bar 'https://github.com/aagdere/kbz/releases/download/v0.1.3503/Kibitz-0.1.3503-arm64-mac.zip' -o "$tmp/Kibitz.zip"
+  [ "$(shasum -a 256 "$tmp/Kibitz.zip" | cut -d' ' -f1)" = 'b2e7b9cbd0666b14a7ea42d9b3baebb9f5c1e30181eb9a2b7f2ab2bdb68b8c87' ] || fail "the download does not match its checksum; try again"
   ditto -x -k "$tmp/Kibitz.zip" "$tmp/app"
   codesign --verify --deep --strict "$tmp/app/Kibitz.app" || fail "the downloaded app's signature does not verify"
   mkdir -p "$dest"
