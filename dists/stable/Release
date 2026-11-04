@@ -2,21 +2,21 @@ Origin: Kibitz
 Label: Kibitz
 Suite: stable
 Codename: stable
-Date: Wed, 04 Nov 2026 03:10:10 GMT
+Date: Wed, 04 Nov 2026 03:41:18 GMT
 Architectures: amd64 arm64
 Components: main
 MD5Sum:
- 1b6ac3d752b2ebe496869d9e6a0d5577       1661 main/binary-amd64/Packages
- 49fee6c91541fa4ef7d21b3b035dc80f        698 main/binary-amd64/Packages.gz
- 0d0b93387df400cf899698c60abd036d       1661 main/binary-arm64/Packages
- d19234dc2f29803ab31fc399acd2e1c8        697 main/binary-arm64/Packages.gz
+ a95cfc118ced2bc847a197127c67436a       1661 main/binary-amd64/Packages
+ c9041f9e5ef0b9ca08cb1b4b23a23546        698 main/binary-amd64/Packages.gz
+ 7652f2fd93c2dc2c94c60889206c4492       1661 main/binary-arm64/Packages
+ 0ef8bfed8a11939e127870bbe3d2fe3b        691 main/binary-arm64/Packages.gz
 SHA1:
- 116dd46ac58567bbf7b80a67de94ae12a55b4f24       1661 main/binary-amd64/Packages
- f46cb1f5300a8f2212e8878bb133d69cac0a88bc        698 main/binary-amd64/Packages.gz
- 28de3922b44f49b43f6085e375f0d9648148806f       1661 main/binary-arm64/Packages
- 242fa601488316da40a3edf24dc65822f6500d2a        697 main/binary-arm64/Packages.gz
+ 4cd201b89e0ace69fb2025dd873305a2185fc203       1661 main/binary-amd64/Packages
+ af9bffe42bd0bd2d748da9fb80b21e05e9f7a1a2        698 main/binary-amd64/Packages.gz
+ 4f33b69ceaf276ebae23bddddbf1d1e812d1cabf       1661 main/binary-arm64/Packages
+ 2599d83932b8c279f66af7fb7616b32bbbaa3b19        691 main/binary-arm64/Packages.gz
 SHA256:
- a66ebe111f70e5dcf26112d1ef80c16eb9158452db95a74a79940161028f261a       1661 main/binary-amd64/Packages
- 00ac3fd1ae855998075440ac3505a53b1c64e86e62432e1eff38a3dd03df2915        698 main/binary-amd64/Packages.gz
- e4552eaddee34e58bcab0b6e912ebb6ce4016b1a3221528c620e09dab20c7279       1661 main/binary-arm64/Packages
- 36477c63132331e09bd28bc9db699fbc05aac0029a8dc839775f6161c0f2c90a        697 main/binary-arm64/Packages.gz
+ e80d8ab510c69df6484c0441795504f1c5b2998d7c89b2c0cedd9d939c9b65da       1661 main/binary-amd64/Packages
+ a777e195a93c7085cab73aa27fabaf3975cfcf8e13c78d89aba999453d206e00        698 main/binary-amd64/Packages.gz
+ 84f4c7dd9b79fd16059ab3df16ad9da4b8e701b20b0956c4b53509eea676d342       1661 main/binary-arm64/Packages
+ ae54b34fb79f16b449429ca81efe27fcfb44ed5c37efcd970496825cec2b2e81        691 main/binary-arm64/Packages.gz
