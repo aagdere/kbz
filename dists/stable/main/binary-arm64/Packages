@@ -15,10 +15,10 @@ Description: Kibitz: run coding agents on your repositories, from your Mac, iPho
  Kibitz (the device helper, such as for a Pi KVM), or just use the apps.
  The choice can be changed later without reinstalling.
 Filename: pool/main/k/kbz/kbz_0.1.4007_arm64.deb
-Size: 111061224
-MD5sum: 6bf554d034ed8bbecc43f776b2a454df
-SHA1: 2578835fb8ead937ddf912469e224704a85e58fd
-SHA256: ab499fbb4d3161519af5def8746b4009b2077aef3e8df6c1ef445f79ed687483
+Size: 111062120
+MD5sum: d05b3b125da16e22c4807d91887880db
+SHA1: 4a52caeabdb873ea079e3bf0c29f7878ec118fdf
+SHA256: c679ebdaf5e75c5577f44b731196f50850ae58f1146fb1bce3c3b0da36de088a
 
 Package: kbz
 Version: 0.1.4005
