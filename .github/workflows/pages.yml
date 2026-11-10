@@ -25,10 +25,10 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 40
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.first.outputs.page_url || steps.retry.outputs.page_url }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -58,5 +58,17 @@ jobs:
         with:
           path: ${{ runner.temp }}/site
 
-      - id: deploy
+      # #2203: a Pages deployment can sit in "syncing_files" past deploy-pages'
+      # 10-minute default and be cancelled, though the same site deploys in a
+      # minute or two on a retry; so it waits a little longer, then tries once more
+      - id: first
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+        with:
+          timeout: 720000
+
+      - id: retry
+        if: steps.first.outcome != 'success'
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 900000
