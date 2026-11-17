@@ -1,4 +1,26 @@
 Package: kbz
+Version: 0.1.4497
+Architecture: arm64
+Maintainer: Kibitz
+Installed-Size: 408211
+Depends: adduser, ca-certificates
+Recommends: git
+Suggests: tailscale, ffmpeg
+Section: devel
+Priority: optional
+Homepage: https://aagdere.github.io/kbz
+Description: Kibitz: run coding agents on your repositories, from your Mac, iPhone and devices
+ One package for every Kibitz machine. Choose what this one does with
+ `kbz setup`: run your Kibitz server, connect this device to your
+ Kibitz (the device helper, such as for a Pi KVM), or just use the apps.
+ The choice can be changed later without reinstalling.
+Filename: pool/main/k/kbz/kbz_0.1.4497_arm64.deb
+Size: 111185468
+MD5sum: d06a55fffd724de2be5b67c6902a2c97
+SHA1: 0c94fa34f2976d35568121be3e07a43452b30a4e
+SHA256: 2f37576f6dd88a589c6a6b2584f52afe5a0c15e6f0cc94301b23c4cc120b967a
+
+Package: kbz
 Version: 0.1.4488
 Architecture: arm64
 Maintainer: Kibitz
@@ -19,25 +41,3 @@ Size: 111177744
 MD5sum: c42004f1350bba196d8ae0daed9c43c2
 SHA1: bbf3fa382d79cdc4fb6bff4a51b407e797d4c65f
 SHA256: efd80207917b92bf618406c3174bee5a0e5843750bbaabbe383d71e72d0ba666
-
-Package: kbz
-Version: 0.1.4486
-Architecture: arm64
-Maintainer: Kibitz
-Installed-Size: 408197
-Depends: adduser, ca-certificates
-Recommends: git
-Suggests: tailscale, ffmpeg
-Section: devel
-Priority: optional
-Homepage: https://aagdere.github.io/kbz
-Description: Kibitz: run coding agents on your repositories, from your Mac, iPhone and devices
- One package for every Kibitz machine. Choose what this one does with
- `kbz setup`: run your Kibitz server, connect this device to your
- Kibitz (the device helper, such as for a Pi KVM), or just use the apps.
- The choice can be changed later without reinstalling.
-Filename: pool/main/k/kbz/kbz_0.1.4486_arm64.deb
-Size: 111183740
-MD5sum: 6456156701ff1979f799933efedaf9a4
-SHA1: eb642acb4e5d185bd6548d56547bb6e162c0e7f8
-SHA256: 7e4538406d90e35c01a6b587edbbdc9d74d09ed5811971236d9e1a1fed560878
