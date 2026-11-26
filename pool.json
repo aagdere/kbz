@@ -1,17 +1,5 @@
 [
   {
-    "path": "pool/main/k/kbz/kbz_0.1.4711_amd64.deb",
-    "url": "https://github.com/aagdere/kbz/releases/download/v0.1.4711/kbz_0.1.4711_amd64.deb",
-    "sha256": "a6b7cd7d61b9c92d88b1ea1cd1e2f3257de00b6a0e867b899864486608c61224",
-    "size": 117622440
-  },
-  {
-    "path": "pool/main/k/kbz/kbz_0.1.4711_arm64.deb",
-    "url": "https://github.com/aagdere/kbz/releases/download/v0.1.4711/kbz_0.1.4711_arm64.deb",
-    "sha256": "d1128ee8ece48af247ebbcdaab0484c808bb3cb12c7ba59574539b116ba67390",
-    "size": 114153488
-  },
-  {
     "path": "pool/main/k/kbz/kbz_0.1.4716_amd64.deb",
     "url": "https://github.com/aagdere/kbz/releases/download/v0.1.4716/kbz_0.1.4716_amd64.deb",
     "sha256": "b1947917204b1fefc402d4acaf7fc41a5f95edc74b47341cf8ce3493181a904e",
@@ -22,5 +10,17 @@
     "url": "https://github.com/aagdere/kbz/releases/download/v0.1.4716/kbz_0.1.4716_arm64.deb",
     "sha256": "ebf0579ab0f7d4b07df37ef21707265d9a5f901b6c0948d07f4dd21b046b40dd",
     "size": 114163004
+  },
+  {
+    "path": "pool/main/k/kbz/kbz_0.1.4723_amd64.deb",
+    "url": "https://github.com/aagdere/kbz/releases/download/v0.1.4723/kbz_0.1.4723_amd64.deb",
+    "sha256": "9b435a7e9f376578031eca0c597b20f2de6d713507e78035be0943d45df4f078",
+    "size": 117676736
+  },
+  {
+    "path": "pool/main/k/kbz/kbz_0.1.4723_arm64.deb",
+    "url": "https://github.com/aagdere/kbz/releases/download/v0.1.4723/kbz_0.1.4723_arm64.deb",
+    "sha256": "aad1fb3c1151f9884bc72818a02c1441ce759d4f5eb95921df40ccea8ad0c640",
+    "size": 114183192
   }
 ]
