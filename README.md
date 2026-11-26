@@ -392,4 +392,4 @@ app's sidebar, and what you saw.
 
 ---
 
-The Homebrew recipes are in the tap, [aagdere/homebrew-kbz](https://github.com/aagdere/homebrew-kbz). This page was written for Kibitz 0.1.4711.
+The Homebrew recipes are in the tap, [aagdere/homebrew-kbz](https://github.com/aagdere/homebrew-kbz). This page was written for Kibitz 0.1.4716.
